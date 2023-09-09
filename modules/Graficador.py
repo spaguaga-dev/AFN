@@ -12,10 +12,10 @@ def graficarAutomataFinitoNoDeterminista(afn, numero_transiciones=0):
     # Contar cuántos archivos ya existen en el directorio
     archivos_existentes = glob.glob(os.path.join(directorio, "thompson_*.png"))
     siguiente_numero = len(archivos_existentes) + 1
-    ruta_salida = os.path.join(directorio, f"thompson_{siguiente_numero}")
+    ruta_salida = os.path.join(directorio, f"thompson_{siguiente_numero}.svg")
 
     # Creamos el grafo
-    grafo = gv.Digraph(format='png', graph_attr={'rankdir': 'LR'})
+    grafo = gv.Digraph(format='svg', graph_attr={'rankdir': 'LR'})
 
     # Agregar los estados y transiciones
     total_transiciones = len(afn.transiciones)
@@ -47,7 +47,7 @@ def graficarAutomataFinitoNoDeterminista(afn, numero_transiciones=0):
 def graficarAutomataFinitoDeterminista(afd, titulo):
 
     # Creamos el grafo
-    grafo = gv.Digraph(format='png', graph_attr={'rankdir': 'LR'})
+    grafo = gv.Digraph(format='svg', graph_attr={'rankdir': 'LR'})
 
     # print(afd.transiciones)
 
